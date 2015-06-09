@@ -28,6 +28,8 @@
 
 AppTerrainJSON::AppTerrainJSON(int argc, char** argv)
 {
+    
+    // @todo refactor into initializer list
     bSetup = false;
     use_graphics = false;
     add_controller = true;
@@ -45,6 +47,7 @@ AppTerrainJSON::AppTerrainJSON(int argc, char** argv)
     startY = 20;
     startZ = 0;
     startAngle = 0;
+    goalAngle= 0;
     
     suffix = "default";
 
@@ -164,6 +167,7 @@ void AppTerrainJSON::handleOptions(int argc, char **argv)
         ("start_y,y", po::value<double>(&startY), "Y Coordinate of starting position for robot. Default = 20")
         ("start_z,z", po::value<double>(&startZ), "Z Coordinate of starting position for robot. Default = 0")
         ("angle,a", po::value<double>(&startAngle), "Angle of starting rotation for robot. Degrees. Default = 0")
+        ("goal_angle,B", po::value<double>(&goalAngle), "Angle of starting rotation for goal box. Degrees. Default = 0")
         ("learning_controller,l", po::value<std::string>(&suffix), "Which learned controller to write to or use. Default = default")
     ;
 

@@ -107,6 +107,9 @@ private:
     double startZ;
     double startAngle;
     
+    // Not used here, but needed to interface with python
+    double goalAngle;
+    
     std::string suffix;
     
     bool bSetup;
